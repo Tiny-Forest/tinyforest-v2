@@ -5,6 +5,7 @@ import Projects from "@/components/Projects";
 import SoilPreparation from "@/components/SoilPreparation";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const Index = () => {
   return (
@@ -26,6 +27,8 @@ const Index = () => {
           </p>
         </div>
       </footer>
+      
+      <FloatingWhatsApp />
     </div>
   );
 };

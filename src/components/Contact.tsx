@@ -1,29 +1,30 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
+import { siteConfig } from "@/config/content";
 
 const Contact = () => {
   return (
     <section className="py-20 px-4 bg-primary text-primary-foreground">
       <div className="max-w-6xl mx-auto text-center space-y-8">
         <h2 className="text-4xl md:text-5xl font-bold">
-          Get in Touch
+          {siteConfig.contact.title}
         </h2>
         
         <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto">
-          Ready to embrace a sustainable lifestyle at Tiny Forest? Contact us today to learn more about our projects.
+          {siteConfig.contact.description}
         </p>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
           <div className="flex items-center gap-3">
             <Phone className="w-6 h-6" />
-            <a href="tel:6237891489" className="text-lg hover:underline">
-              +91 6237891489
+            <a href={`tel:${siteConfig.site.phone}`} className="text-lg hover:underline">
+              {siteConfig.site.phoneFormatted}
             </a>
           </div>
           
           <div className="flex items-center gap-3">
             <MapPin className="w-6 h-6" />
-            <span className="text-lg">Panjapur & Archampatti, Tamil Nadu</span>
+            <span className="text-lg">{siteConfig.site.locations}</span>
           </div>
         </div>
         
@@ -34,8 +35,8 @@ const Contact = () => {
             className="rounded-full px-8 py-6 text-lg bg-background text-foreground hover:bg-background/90"
             asChild
           >
-            <a href="https://wa.me/916237891489" target="_blank" rel="noopener noreferrer">
-              WhatsApp Us
+            <a href={`https://wa.me/${siteConfig.site.whatsappNumber}`} target="_blank" rel="noopener noreferrer">
+              {siteConfig.contact.whatsappButtonText}
             </a>
           </Button>
         </div>

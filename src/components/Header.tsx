@@ -1,3 +1,5 @@
+import { siteConfig } from "@/config/content";
+
 const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -6,7 +8,7 @@ const Header = () => {
           <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
             <span className="text-2xl">🌳</span>
           </div>
-          <span className="text-xl font-semibold text-foreground">Tiny Forest</span>
+          <span className="text-xl font-semibold text-foreground">{siteConfig.site.name}</span>
         </div>
       </div>
     </header>
