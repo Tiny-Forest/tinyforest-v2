@@ -8,23 +8,30 @@ const Hero = () => {
 
   return (
     <>
-      <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-4 py-20">
+      <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-4 py-10">
         <div className="max-w-4xl mx-auto text-center space-y-8 mb-12 relative z-10">
-          <p className="text-muted-foreground flex items-center justify-center gap-2 text-lg animate-fade-in">
-            {siteConfig.hero.tagline}<span className="text-2xl">{siteConfig.hero.emoji}</span>
-          </p>
+          <div className="text-muted-foreground flex items-center justify-center gap-3 text-lg animate-fade-in">
+            <span className="h-3 w-3 bg-forest-green" aria-hidden="true" />
+            <span className="md:text-xl text-base">{siteConfig.hero.tagline}</span>
+            <span className="text-2xl" role="img" aria-label="tree">
+              {siteConfig.hero.emoji}
+            </span>
+          </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground leading-tight animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <h1 className="text-4xl md:text-5xl font-normal text-foreground leading-tight animate-fade-in" style={{ animationDelay: "0.2s" }}>
             {siteConfig.hero.headline}
           </h1>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+          <div
+            className="mx-auto grid w-full max-w-md grid-cols-2 gap-4 pt-6 animate-fade-in"
+            style={{ animationDelay: "0.4s" }}
+          >
             {siteConfig.hero.ctaButtons.map((button, index) => (
-              <Button 
+              <Button
                 key={index}
-                size="lg" 
+                size="lg"
                 variant={button.variant as "default" | "secondary"}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 py-6 text-lg"
+                className="w-full rounded-full bg-primary px-6 py-4 md:text-base text-sm text-primary-foreground hover:bg-primary/90"
                 asChild={!button.requiresForm}
                 onClick={button.requiresForm ? () => setShowBrochureDialog(true) : undefined}
               >
@@ -47,13 +54,8 @@ const Hero = () => {
               playsInline
               className="w-full h-auto"
               poster={siteConfig.hero.fallbackImage}
+              src={siteConfig.hero.backgroundVideo}
             >
-              <source src={siteConfig.hero.backgroundVideo} type="video/mp4" />
-              <img 
-                src={siteConfig.hero.fallbackImage}
-                alt="Tree-lined pathway in Tiny Forest"
-                className="w-full h-auto"
-              />
             </video>
           </div>
         </div>

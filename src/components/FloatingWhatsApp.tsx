@@ -10,7 +10,7 @@ const FloatingWhatsApp = () => {
         asChild
       >
         <a 
-          href={`https://wa.me/${siteConfig.site.whatsappNumber}`}
+          href={siteConfig.site.whatsappUrl}
           target="_blank" 
           rel="noopener noreferrer"
         >

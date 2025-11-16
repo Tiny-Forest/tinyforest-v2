@@ -1,64 +1,65 @@
-import { Card } from "@/components/ui/card";
 import { siteConfig } from "@/config/content";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const SoilPreparation = () => {
-  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
-  const { ref: imageRef, isVisible: imageVisible } = useScrollAnimation();
-  const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation();
+  const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-20 px-4 bg-secondary">
-      <div className="max-w-6xl mx-auto space-y-12">
-        <div 
-          ref={headerRef}
-          className={`text-center space-y-4 transition-all duration-700 ${
-            headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          <p className="text-muted-foreground text-sm uppercase tracking-wider">{siteConfig.soilPreparation.label}</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-            {siteConfig.soilPreparation.title}
-          </h2>
-          <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
+    <section className="px-4 py-24">
+      <div
+        ref={ref}
+        className={`mx-auto max-w-6xl space-y-12 text-center transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
+        <span className="mx-auto inline-flex items-center rounded-full bg-forest-green/10 px-5 py-1 text-sm font-semibold text-forest-green">
+          {siteConfig.soilPreparation.label}
+        </span>
+        <div className="space-y-4">
+          <h2 className="text-4xl font-semibold text-foreground md:text-5xl">{siteConfig.soilPreparation.title}</h2>
+          <p className="mx-auto max-w-3xl text-lg leading-relaxed text-foreground/80">
             {siteConfig.soilPreparation.description}
           </p>
         </div>
-        
-        <div 
-          ref={imageRef}
-          className={`aspect-video w-full rounded-3xl overflow-hidden shadow-xl mb-12 transition-all duration-700 ${
-            imageVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
-          }`}
-        >
-          <img 
-            src={siteConfig.soilPreparation.videoThumbnail}
-            alt="Soil preparation process"
-            className="w-full h-full object-cover"
-          />
+
+        <div className="grid items-center gap-10 text-left lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="rounded-[32px] bg-black/5 shadow-2xl ring-1 ring-black/10">
+            <div className="aspect-video w-full overflow-hidden rounded-[32px]">
+              {siteConfig.soilPreparation.videoId ? (
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src={`https://www.youtube.com/embed/${siteConfig.soilPreparation.videoId}`}
+                  title={siteConfig.soilPreparation.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="h-full w-full"
+                />
+              ) : (
+                <img
+                  src={siteConfig.soilPreparation.videoThumbnail}
+                  alt="Soil preparation"
+                  className="h-full w-full object-cover"
+                />
+              )}
+            </div>
+          </div>
+
+          <ul className="space-y-5 text-lg leading-relaxed text-foreground/80">
+            {siteConfig.soilPreparation.features.map((feature, index) => (
+              <li key={index}>
+                <span className="font-semibold text-foreground">{feature.title}:</span>{" "}
+                <span>{feature.description}</span>
+              </li>
+            ))}
+          </ul>
         </div>
-        
-        <div 
-          ref={cardsRef}
-          className={`grid md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-700 ${
-            cardsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          {siteConfig.soilPreparation.features.map((feature, index) => (
-            <Card key={index} className="p-6 bg-card border-border hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-bold text-foreground mb-3">{feature.title}</h3>
-              <p className="text-foreground/70 leading-relaxed">{feature.description}</p>
-            </Card>
-          ))}
-        </div>
-        
-        <p className="text-center text-lg text-foreground/80 pt-8">
-          {siteConfig.soilPreparation.closingText}
-        </p>
-        
-        <p className="text-center text-2xl font-semibold text-primary">
+
+        <p className="text-lg text-foreground/80">{siteConfig.soilPreparation.closingText}</p>
+
+        <span className="mx-auto inline-flex items-center justify-center rounded-full bg-forest-green px-6 py-2 text-sm font-semibold text-primary-foreground">
           {siteConfig.soilPreparation.treesCount}
-        </p>
+        </span>
       </div>
     </section>
   );

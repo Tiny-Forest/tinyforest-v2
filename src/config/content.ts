@@ -3,7 +3,9 @@ export const siteConfig = {
     name: "Tiny Forest",
     phone: "6237891489",
     phoneFormatted: "+91 6237891489",
-    whatsappNumber: "916237891489",
+    secondaryPhone: "7092211099",
+    secondaryPhoneFormatted: "+91 70922 11099",
+    whatsappUrl: "https://wa.me/+919994680316",
     email: "info@tinyforest.com",
     locations: "Panjapur & Archampatti, Tamil Nadu",
     youtubeChannel: "https://www.youtube.com/@TinyForestGardens",
@@ -13,12 +15,13 @@ export const siteConfig = {
     tagline: "A Sustainable Agroforestry lifestyle",
     emoji: "🌳",
     headline: "Where every tree tells a Story.",
-    backgroundVideo: "https://framerusercontent.com/assets/hJm5RkrImlBsUDMyHawJCSKLJkE.mp4",
-    fallbackImage: "https://framerusercontent.com/images/hSGHgjjtHgHKTWTTiZWLswoV5pk.png?width=1001&height=826",
+    backgroundVideo: "https://pub-95cf346dcb2f490d8c4145e006736fcf.r2.dev",
+    //backgroundVideo: "/Panj+Arch.mp4", //used for dev purpose
+    fallbackImage: "",
     ctaButtons: [
       {
         text: "Contact us",
-        href: "tel:6237891489",
+        href: "tel:+916237891489",
         variant: "default"
       },
       {
@@ -33,6 +36,10 @@ export const siteConfig = {
     label: "About Us",
     title: "Tiny Forest is a meticulously planned eco-community",
     description: "Nestled near Panjapur and Archampatti, Tiny Forest is more than a project — it's a way of life rooted in sustainability, health, and harmony with nature. Spread across 7 acres with 27 lands in Panjapur and 6 acres with 20 lands in Archampatti, it offers a rare chance to build your farmhouse or regenerative retreat and embrace a disease-free, chemical-free lifestyle on pure, living soil.",
+    image: {
+      src: "https://framerusercontent.com/images/hSGHgjjtHgHKTWTTiZWLswoV5pk.png?width=1001&height=826",
+      alt: "Child planting a sapling beneath a large tree"
+    },
     callToAction: "Learn more about us on our channel.",
     buttonText: "Youtube"
   },
@@ -59,6 +66,7 @@ export const siteConfig = {
     label: "Soil Preparation",
     title: "The Heartbeat of Tiny Forest",
     description: "Through careful ploughing, biofertilizers, and organic enrichment, we transform barren ground into living, fertile soil that sustains both people and planet.",
+    videoId: "8KShgqofAJI",
     videoThumbnail: "https://i.ytimg.com/vi_webp/8KShgqofAJI/maxresdefault.webp",
     features: [
       {
@@ -90,8 +98,9 @@ export const siteConfig = {
     treesCount: "35+ Handpicked Trees"
   },
   testimonials: {
-    title: "Testimonials",
-    subtitle: "Hear from our clients",
+    label: "Testimonials",
+    title: "Hear from our clients",
+    subtitle: "",
     items: [
       {
         quote: "The main reason is my desire to move away from city life and come to this kind of lifestyle. I have lived in many cities and many countries. Even though I have lived in big cities around the world, I wanted a life like this, and that is the reason I bought land here",
@@ -106,8 +115,19 @@ export const siteConfig = {
     ]
   },
   contact: {
-    title: "Get in Touch",
-    description: "Ready to embrace a sustainable lifestyle at Tiny Forest? Contact us today to learn more about our projects.",
-    whatsappButtonText: "WhatsApp Us"
+    title: "Give us a visit ❤️. We bet you'll be impressed.",
+    description: "",
+    whatsappButtonText: "Contact Us"
+  },
+  footer: {
+    description: "Creating sustainable micro-forests across the nation. Invest in nature, invest in your future.",
+    contactNumbers: [
+      { display: "+91 99946 80316", value: "+919994680316" },
+      { display: "+91 70922 11099", value: "+917092211099" }
+    ],
+    email: "tinyforestgardens@gmail.com",
+    qrLabel: "Scan for Panjapur Location",
+    
+    qrImage: "/qr_image.jpeg"
   }
 };

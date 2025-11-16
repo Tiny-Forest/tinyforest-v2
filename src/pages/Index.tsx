@@ -11,23 +11,14 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="pt-16">
+      <main className="pt-6 sm:pt-10">
         <Hero />
         <About />
         <Projects />
         <SoilPreparation />
         <Testimonials />
         <Contact />
-      </main>
-      
-      <footer className="bg-secondary py-8 px-4 border-t border-border">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-muted-foreground">
-            © 2024 Tiny Forest. All rights reserved.
-          </p>
-        </div>
-      </footer>
-      
+      </main>      
       <FloatingWhatsApp />
     </div>
   );

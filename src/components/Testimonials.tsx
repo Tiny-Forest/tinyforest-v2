@@ -1,47 +1,48 @@
-import { Card } from "@/components/ui/card";
 import { siteConfig } from "@/config/content";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Testimonials = () => {
-  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
-  const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation();
+  const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-6xl mx-auto space-y-12">
-        <div 
-          ref={headerRef}
-          className={`text-center space-y-4 transition-all duration-700 ${
-            headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-            {siteConfig.testimonials.title}
-          </h2>
-          <p className="text-xl text-muted-foreground">{siteConfig.testimonials.subtitle}</p>
+    <section className="px-4 pt-1 pb-10">
+      <div
+        ref={ref}
+        className={`mx-auto max-w-6xl space-y-12 transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
+        <div className="text-center space-y-4">
+          <span className="inline-flex items-center rounded-full border border-border px-5 py-1 text-sm font-semibold text-muted-foreground">
+            {siteConfig.testimonials.label}
+          </span>
+          <h2 className="text-4xl font-semibold text-foreground md:text-5xl">{siteConfig.testimonials.title}</h2>
+          {siteConfig.testimonials.subtitle && (
+            <p className="text-lg text-foreground/70">{siteConfig.testimonials.subtitle}</p>
+          )}
         </div>
-        
-        <div 
-          ref={cardsRef}
-          className={`grid md:grid-cols-2 gap-8 transition-all duration-700 ${
-            cardsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
+
+        <div className="mx-auto grid md:w-4/6 w-full max-w-5xl gap-3  md:grid-cols-2">
           {siteConfig.testimonials.items.map((testimonial, index) => (
-            <Card key={index} className="p-8 bg-card border-border space-y-6 hover:shadow-xl transition-shadow">
-              <p className="text-foreground/80 leading-relaxed text-lg italic">
-                "{testimonial.quote}"
-              </p>
-              
-              <div className="flex items-center gap-4">
-                <img 
+            <article
+              key={index}
+              className="rounded-[12px] border border-border bg-earth-beige/30 px-8 py-10"
+            >
+              <div className="mb-6 flex gap-1 text-xl text-forest-green">
+                {Array.from({ length: 5 }).map((_, starIndex) => (
+                  <span key={starIndex}>★</span>
+                ))}
+              </div>
+              <p className="text-base leading-relaxed text-foreground/80">"{testimonial.quote}"</p>
+              <div className="mt-8 flex items-center gap-4 ">
+                <img
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="w-16 h-16 rounded-full object-cover"
+                  className="h-14 w-14 rounded-full object-cover"
                 />
-                <p className="font-semibold text-foreground text-lg">{testimonial.name}</p>
+                <p className="text-lg font-semibold text-foreground">{testimonial.name}</p>
               </div>
-            </Card>
+            </article>
           ))}
         </div>
       </div>
