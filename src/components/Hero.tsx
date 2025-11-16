@@ -45,7 +45,7 @@ const Hero = () => {
           </div>
         </div>
         
-        <div className="w-full max-w-6xl mx-auto relative z-10 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+        {/* <div className="w-full max-w-6xl mx-auto relative z-10 animate-fade-in" style={{ animationDelay: "0.6s" }}>
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
             <video
               autoPlay
@@ -58,7 +58,21 @@ const Hero = () => {
             >
             </video>
           </div>
-        </div>
+        </div> */}
+        <div
+  className="w-full max-w-6xl mx-auto relative z-10 animate-fade-in"
+  style={{ animationDelay: "0.6s" }}
+>
+  <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-video">
+    <iframe
+      className="w-full h-full"
+      src="https://www.youtube.com/embed/2DEwPTkcaqE?autoplay=1&mute=1&controls=0&showinfo=0&loop=1&playlist=2DEwPTkcaqE&modestbranding=1"
+      title="Tiny Forest Video"
+      allow="autoplay; encrypted-media"
+      allowFullScreen
+    ></iframe>
+  </div>
+</div>
       </section>
       
       <BrochureDialog open={showBrochureDialog} onOpenChange={setShowBrochureDialog} />

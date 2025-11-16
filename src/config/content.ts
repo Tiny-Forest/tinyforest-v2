@@ -15,8 +15,8 @@ export const siteConfig = {
     tagline: "A Sustainable Agroforestry lifestyle",
     emoji: "🌳",
     headline: "Where every tree tells a Story.",
-    backgroundVideo: "https://pub-95cf346dcb2f490d8c4145e006736fcf.r2.dev",
-    //backgroundVideo: "/Panj+Arch.mp4", //used for dev purpose
+    backgroundVideo: "https://cdn.tinyforest.co.in/Panj%2BArch.mp4",
+    // backgroundVideo: "https://www.youtube.com/embed/2DEwPTkcaqE?autoplay=1&mute=1&loop=1&playlist=2DEwPTkcaqE&controls=0&showinfo=0&modestbranding=1&start=00&end=90", //used for dev purpose
     fallbackImage: "",
     ctaButtons: [
       {
