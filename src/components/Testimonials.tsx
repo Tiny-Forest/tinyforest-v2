@@ -1,18 +1,32 @@
 import { Card } from "@/components/ui/card";
 import { siteConfig } from "@/config/content";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Testimonials = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation();
+
   return (
     <section className="py-20 px-4">
       <div className="max-w-6xl mx-auto space-y-12">
-        <div className="text-center space-y-4">
+        <div 
+          ref={headerRef}
+          className={`text-center space-y-4 transition-all duration-700 ${
+            headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">
             {siteConfig.testimonials.title}
           </h2>
           <p className="text-xl text-muted-foreground">{siteConfig.testimonials.subtitle}</p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8">
+        <div 
+          ref={cardsRef}
+          className={`grid md:grid-cols-2 gap-8 transition-all duration-700 ${
+            cardsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           {siteConfig.testimonials.items.map((testimonial, index) => (
             <Card key={index} className="p-8 bg-card border-border space-y-6 hover:shadow-xl transition-shadow">
               <p className="text-foreground/80 leading-relaxed text-lg italic">

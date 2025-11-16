@@ -1,15 +1,32 @@
 import { siteConfig } from "@/config/content";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Projects = () => {
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
+
   return (
     <section className="py-20 px-4">
       <div className="max-w-6xl mx-auto space-y-20">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-16">
+        <h2 
+          ref={titleRef}
+          className={`text-4xl md:text-5xl font-bold text-center text-foreground mb-16 transition-all duration-700 ${
+            titleVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           {siteConfig.projects.title}
         </h2>
         
-        {siteConfig.projects.items.map((project) => (
-          <div key={project.id} className="grid md:grid-cols-2 gap-8 items-center">
+        {siteConfig.projects.items.map((project) => {
+          const ProjectItem = () => {
+            const { ref, isVisible } = useScrollAnimation();
+            return (
+              <div 
+                ref={ref}
+                key={project.id} 
+                className={`grid md:grid-cols-2 gap-8 items-center transition-all duration-700 ${
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
+              >
             {project.videoPosition === "top" ? (
               <>
                 <div className="aspect-video w-full rounded-3xl overflow-hidden shadow-xl">
@@ -55,8 +72,11 @@ const Projects = () => {
                 </div>
               </>
             )}
-          </div>
-        ))}
+              </div>
+            );
+          };
+          return <ProjectItem key={project.id} />;
+        })}
       </div>
     </section>
   );

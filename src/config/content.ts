@@ -13,7 +13,8 @@ export const siteConfig = {
     tagline: "A Sustainable Agroforestry lifestyle",
     emoji: "🌳",
     headline: "Where every tree tells a Story.",
-    videoUrl: "https://framerusercontent.com/images/hSGHgjjtHgHKTWTTiZWLswoV5pk.png?width=1001&height=826",
+    backgroundVideo: "https://framerusercontent.com/assets/hJm5RkrImlBsUDMyHawJCSKLJkE.mp4",
+    fallbackImage: "https://framerusercontent.com/images/hSGHgjjtHgHKTWTTiZWLswoV5pk.png?width=1001&height=826",
     ctaButtons: [
       {
         text: "Contact us",

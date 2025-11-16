@@ -1,10 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/content";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const About = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
     <section className="py-20 px-4 bg-secondary">
-      <div className="max-w-6xl mx-auto">
+      <div 
+        ref={ref}
+        className={`max-w-6xl mx-auto transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         <p className="text-muted-foreground text-sm uppercase tracking-wider mb-4">{siteConfig.about.label}</p>
         
         <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
