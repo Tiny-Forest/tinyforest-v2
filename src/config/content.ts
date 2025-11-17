@@ -1,8 +1,8 @@
 export const siteConfig = {
   site: {
     name: "Tiny Forest",
-    phone: "6237891489",
-    phoneFormatted: "+91 6237891489",
+    phone: "",
+    phoneFormatted: "+91 9994680316",
     secondaryPhone: "7092211099",
     secondaryPhoneFormatted: "+91 70922 11099",
     whatsappUrl: "https://wa.me/+919994680316",
@@ -21,7 +21,7 @@ export const siteConfig = {
     ctaButtons: [
       {
         text: "Contact us",
-        href: "tel:+916237891489",
+        href: "tel:+919994680316",
         variant: "default"
       },
       {
