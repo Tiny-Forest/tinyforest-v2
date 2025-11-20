@@ -5,7 +5,7 @@ const Testimonials = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="px-4 pt-1 pb-10">
+    <section className="px-4 pt-5 pb-10">
       <div
         ref={ref}
         className={`mx-auto max-w-6xl space-y-12 transition-all duration-700 ${
@@ -16,9 +16,13 @@ const Testimonials = () => {
           <span className="inline-flex items-center rounded-full border border-border px-5 py-1 text-sm font-semibold text-muted-foreground">
             {siteConfig.testimonials.label}
           </span>
-          <h2 className="text-4xl font-semibold text-foreground md:text-5xl">{siteConfig.testimonials.title}</h2>
+          <h2 className="text-4xl font-semibold text-foreground md:text-5xl">
+            {siteConfig.testimonials.title}
+          </h2>
           {siteConfig.testimonials.subtitle && (
-            <p className="text-lg text-foreground/70">{siteConfig.testimonials.subtitle}</p>
+            <p className="text-lg text-foreground/70">
+              {siteConfig.testimonials.subtitle}
+            </p>
           )}
         </div>
 
@@ -33,14 +37,18 @@ const Testimonials = () => {
                   <span key={starIndex}>★</span>
                 ))}
               </div>
-              <p className="text-base leading-relaxed text-foreground/80">"{testimonial.quote}"</p>
+              <p className="text-base leading-relaxed text-foreground/80">
+                "{testimonial.quote}"
+              </p>
               <div className="mt-8 flex items-center gap-4 ">
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
                   className="h-14 w-14 rounded-full object-cover"
                 />
-                <p className="text-lg font-semibold text-foreground">{testimonial.name}</p>
+                <p className="text-lg font-semibold text-foreground">
+                  {testimonial.name}
+                </p>
               </div>
             </article>
           ))}

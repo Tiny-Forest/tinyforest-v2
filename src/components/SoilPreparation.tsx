@@ -5,18 +5,21 @@ const SoilPreparation = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="px-4 py-24">
+    <section className="px-4 py-0">
       <div
         ref={ref}
         className={`mx-auto max-w-6xl space-y-12 text-center transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-        <span className="mx-auto inline-flex items-center rounded-full bg-forest-green/10 px-5 py-1 text-sm font-semibold text-forest-green">
+        <span className="mx-auto inline-flex items-center rounded-full bg-forest-green/10 px-6 py-2 text-base font-semibold text-forest-green">
           {siteConfig.soilPreparation.label}
         </span>
+
         <div className="space-y-4">
-          <h2 className="text-4xl font-semibold text-foreground md:text-5xl">{siteConfig.soilPreparation.title}</h2>
+          <h2 className="text-4xl font-semibold text-foreground md:text-5xl">
+            {siteConfig.soilPreparation.title}
+          </h2>
           <p className="mx-auto max-w-3xl text-lg leading-relaxed text-foreground/80">
             {siteConfig.soilPreparation.description}
           </p>
@@ -48,16 +51,20 @@ const SoilPreparation = () => {
           <ul className="space-y-5 text-lg leading-relaxed text-foreground/80">
             {siteConfig.soilPreparation.features.map((feature, index) => (
               <li key={index}>
-                <span className="font-semibold text-foreground">{feature.title}:</span>{" "}
+                <span className="font-semibold text-foreground">
+                  {feature.title}:
+                </span>{" "}
                 <span>{feature.description}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        <p className="text-lg text-foreground/80">{siteConfig.soilPreparation.closingText}</p>
+        <p className="text-lg text-foreground/80">
+          {siteConfig.soilPreparation.closingText}
+        </p>
 
-        <span className="mx-auto inline-flex items-center justify-center rounded-full bg-forest-green px-6 py-2 text-sm font-semibold text-primary-foreground">
+        <span className="mx-auto inline-flex items-center justify-center rounded-full bg-forest-green px-6 py-3 text-sm font-semibold text-primary-foreground">
           {siteConfig.soilPreparation.treesCount}
         </span>
       </div>

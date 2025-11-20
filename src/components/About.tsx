@@ -14,7 +14,7 @@ const About = () => {
         }`}
       >
         <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="overflow-hidden rounded-[40px] bg-muted shadow-2xl ring-1 ring-border/60">
+          <div className="hidden lg:block overflow-hidden rounded-[40px] bg-muted shadow-2xl ring-1 ring-border/60">
             <img
               src={siteConfig.about.image.src}
               alt={siteConfig.about.image.alt}

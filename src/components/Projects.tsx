@@ -26,7 +26,7 @@ const Projects = () => {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-        <div className="mb-12 flex flex-col items-center gap-4 text-center">
+        <div className="mb-8 flex flex-col items-center gap-4 text-center">
           <p className="text-muted-foreground">
             {siteConfig.about.callToAction}
           </p>
@@ -96,7 +96,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <div
       ref={ref}
-      className={`grid items-center gap-8 rounded-[32px] px-6 py-8 transition-all duration-700 transform hover:scale-[0.95] md:grid-cols-2 lg:gap-12 ${
+      className={`grid items-center gap-8 rounded-[32px] px-6 py-4 transition-all duration-700 transform hover:scale-[0.95] md:grid-cols-2 lg:gap-12 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
@@ -107,8 +107,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
         </>
       ) : (
         <>
-          {copy}
           {media}
+          {copy}
         </>
       )}
     </div>
