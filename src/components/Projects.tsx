@@ -13,6 +13,9 @@ const Projects = () => {
   const handleYouTubeVisit = () => {
     if (typeof window !== "undefined") {
       window.zaraz?.event("visit_youtube_channel");
+      console.log("TinyForest_Brochure_Youtube");
+    } else {
+      console.log("TinyForest_Brochure_Youtube-");
     }
   };
   return (

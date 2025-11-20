@@ -81,6 +81,9 @@ const BrochureDialog = ({ open, onOpenChange }: BrochureDialogProps) => {
 
       if (typeof window !== "undefined") {
         window.zaraz?.event("download_brochure");
+        console.log("TinyForest_Brochure_Download");
+      } else {
+        console.log("TinyForest_Brochure_Download-");
       }
 
       // Close dialog and reset form immediately

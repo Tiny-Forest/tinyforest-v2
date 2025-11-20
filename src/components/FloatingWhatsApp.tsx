@@ -15,6 +15,9 @@ const FloatingWhatsApp = () => {
     // Track the click via Zaraz
     if (typeof window !== "undefined") {
       window.zaraz?.event("whatsapp_click");
+      console.log("TinyForest_Brochure_Whatsapp");
+    } else {
+      console.log("TinyForest_Brochure_Whatsapp-");
     }
   };
 
