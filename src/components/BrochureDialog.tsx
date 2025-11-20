@@ -1,3 +1,11 @@
+declare global {
+  interface Window {
+    zaraz?: {
+      event: (eventName: string, data?: Record<string, any>) => void;
+    };
+  }
+}
+
 import { useState } from "react";
 import {
   Dialog,
@@ -70,6 +78,10 @@ const BrochureDialog = ({ open, onOpenChange }: BrochureDialogProps) => {
         description:
           "Your brochure is being downloaded. Thank you for your interest!",
       });
+
+      if (typeof window !== "undefined") {
+        window.zaraz?.event("download_brochure");
+      }
 
       // Close dialog and reset form immediately
       onOpenChange(false);

@@ -1,10 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/content";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-
+declare global {
+  interface Window {
+    zaraz?: {
+      event: (eventName: string, data?: Record<string, any>) => void;
+    };
+  }
+}
 const Projects = () => {
   const { ref, isVisible } = useScrollAnimation();
-
+  const handleYouTubeVisit = () => {
+    if (typeof window !== "undefined") {
+      window.zaraz?.event("visit_youtube_channel");
+    }
+  };
   return (
     <section className="px-4 pb-24">
       <div
@@ -14,17 +24,26 @@ const Projects = () => {
         }`}
       >
         <div className="mb-12 flex flex-col items-center gap-4 text-center">
-          <p className="text-muted-foreground">{siteConfig.about.callToAction}</p>
+          <p className="text-muted-foreground">
+            {siteConfig.about.callToAction}
+          </p>
           <Button
             size="lg"
             className="rounded-full bg-forest-green px-8 py-5 text-base font-semibold text-primary-foreground hover:bg-forest-green/90"
             asChild
           >
-            <a href={siteConfig.site.youtubeChannel} target="_blank" rel="noopener noreferrer">
+            <a
+              href={siteConfig.site.youtubeChannel}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleYouTubeVisit}
+            >
               {siteConfig.about.buttonText}
             </a>
           </Button>
-          <h2 className="text-4xl font-semibold text-foreground md:text-5xl">{siteConfig.projects.title}</h2>
+          <h2 className="text-4xl font-semibold text-foreground md:text-5xl">
+            {siteConfig.projects.title}
+          </h2>
         </div>
 
         <div className="space-y-10">
@@ -62,8 +81,12 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
   const copy = (
     <div className="space-y-4 text-left">
-      <h3 className="text-3xl font-medium text-foreground md:text-4xl">{project.name}</h3>
-      <p className="text-lg leading-relaxed text-foreground/80">{project.description}</p>
+      <h3 className="text-3xl font-medium text-foreground md:text-4xl">
+        {project.name}
+      </h3>
+      <p className="text-lg leading-relaxed text-foreground/80">
+        {project.description}
+      </p>
     </div>
   );
 
