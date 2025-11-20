@@ -22,9 +22,9 @@ const About = () => {
             />
           </div>
           <div className="space-y-6 text-left">
-            <span className="inline-flex w-fit items-center rounded-full border border-border px-5 py-1 text-sm font-medium text-muted-foreground">
+            <h2 className="inline-flex w-fit items-center rounded-full border border-border px-5 py-1 text-sm font-medium text-muted-foreground">
               {siteConfig.about.label}
-            </span>
+            </h2>
             <h2 className="text-4xl md:text-5xl font-semibold leading-tight text-foreground">
               {siteConfig.about.title}
             </h2>

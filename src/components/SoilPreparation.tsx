@@ -51,10 +51,10 @@ const SoilPreparation = () => {
           <ul className="space-y-5 text-lg leading-relaxed text-foreground/80">
             {siteConfig.soilPreparation.features.map((feature, index) => (
               <li key={index}>
-                <span className="font-semibold text-foreground">
+                <h2 className="font-semibold text-foreground">
                   {feature.title}:
-                </span>{" "}
-                <span>{feature.description}</span>
+                </h2>{" "}
+                <h3>{feature.description}</h3>
               </li>
             ))}
           </ul>

@@ -12,9 +12,9 @@ const Header = () => {
           />
         </div>
         <div className="flex flex-col">
-          <span className="text-xl font-normal font-sans text-foreground sm:text-2xl">
+          <h1 className="text-xl font-normal font-sans text-foreground sm:text-2xl">
             {siteConfig.site.name}
-          </span>
+          </h1>
         </div>
       </div>
     </header>

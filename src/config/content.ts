@@ -12,7 +12,7 @@ export const siteConfig = {
     brochureUrl: "https://drive.google.com/uc?export=download&id=1aiuqzG1aC6ePTOumjnuLfVRPQYnht3aK"
   },
   hero: {
-    tagline: "A Sustainable Agroforestry lifestyle",
+    tagline: "A Premium farm land in Trichy",
     emoji: "🌳",
     headline: "Where every tree tells a Story.",
     backgroundVideo: "https://cdn.tinyforest.co.in/Panj%2BArch.mp4",
@@ -48,7 +48,7 @@ export const siteConfig = {
     items: [
       {
         id: "panjappur",
-        name: "Panjappur Project Development",
+        name: "Tiny Forest - Panjappur",
         videoId: "oC4T3Y0hp5c",
         description: "Tiny Forest offers chemical-free food and a naturally stress-free, healthy lifestyle. It restores soil, water, and air through organic inputs and native trees. A rich mix of fruit, medicinal, and native plants boosts soil health and biodiversity. The ecosystem supports pollinators and delivers year-round natural yield. Spread across 7 acres with 27 lands, it reflects 2.5 years of dedicated soil nurturing for a peaceful, green way of living.",
         videoPosition: "top"
@@ -129,5 +129,13 @@ export const siteConfig = {
     qrLabel: "Scan for Panjapur Location",
     
     qrImage: "/qr_image.jpeg"
-  }
+  },
+  Keywords: [
+    "Land for sale in Trichy",
+    "Farmland for sale",
+    "Land for sale in Panjapur",
+    "TinyForest trichy",
+    "Properties to invest",
+    "Premium farmland for sale", "Trichy land", "panjappur land", "Lands near panjappu busstand"
+  ]
 };

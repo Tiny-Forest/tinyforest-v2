@@ -6,6 +6,7 @@ import SoilPreparation from "@/components/SoilPreparation";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import Keywords from "@/components/Keywords";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
         <SoilPreparation />
         <Testimonials />
         <Contact />
+        <Keywords />
       </main>
       <FloatingWhatsApp />
     </div>

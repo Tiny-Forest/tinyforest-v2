@@ -12,20 +12,20 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8 mb-12 relative z-10">
           <div className="text-muted-foreground flex items-center justify-center gap-3 text-lg animate-fade-in">
             <span className="h-3 w-3 bg-forest-green" aria-hidden="true" />
-            <span className="md:text-xl text-base">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">
               {siteConfig.hero.tagline}
-            </span>
+            </h2>
             <span className="text-2xl" role="img" aria-label="tree">
               {siteConfig.hero.emoji}
             </span>
           </div>
 
-          <h1
+          <h2
             className="text-4xl md:text-5xl font-normal text-foreground leading-tight animate-fade-in"
             style={{ animationDelay: "0.2s" }}
           >
             {siteConfig.hero.headline}
-          </h1>
+          </h2>
 
           <div
             className="mx-auto grid w-full max-w-md grid-cols-2 gap-4 pt-6 animate-fade-in"
