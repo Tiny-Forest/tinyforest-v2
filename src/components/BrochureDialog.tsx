@@ -1,7 +1,7 @@
 declare global {
   interface Window {
     zaraz?: {
-      event: (eventName: string, data?: Record<string, any>) => void;
+      track: (eventName: string, data?: Record<string, any>) => void;
     };
   }
 }
@@ -80,7 +80,7 @@ const BrochureDialog = ({ open, onOpenChange }: BrochureDialogProps) => {
       });
 
       if (typeof window !== "undefined") {
-        window.zaraz?.event("download_brochure");
+        window.zaraz?.track("download_brochure");
         console.log("TinyForest_Brochure_Download");
       } else {
         console.log("TinyForest_Brochure_Download-");

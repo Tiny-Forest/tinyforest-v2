@@ -4,7 +4,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 declare global {
   interface Window {
     zaraz?: {
-      event: (eventName: string, data?: Record<string, any>) => void;
+      track: (eventName: string, data?: Record<string, any>) => void;
     };
   }
 }
@@ -12,7 +12,7 @@ const Projects = () => {
   const { ref, isVisible } = useScrollAnimation();
   const handleYouTubeVisit = () => {
     if (typeof window !== "undefined") {
-      window.zaraz?.event("visit_youtube_channel");
+      window.zaraz?.track("visit_youtube_channel");
       console.log("TinyForest_Brochure_Youtube");
     } else {
       console.log("TinyForest_Brochure_Youtube-");

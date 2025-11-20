@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/content";
 declare global {
   interface Window {
     zaraz?: {
-      event: (eventName: string, data?: Record<string, any>) => void;
+      track: (eventName: string, data?: Record<string, any>) => void;
     };
   }
 }
@@ -14,7 +14,7 @@ const FloatingWhatsApp = () => {
   const handleWhatsAppClick = () => {
     // Track the click via Zaraz
     if (typeof window !== "undefined") {
-      window.zaraz?.event("whatsapp_click");
+      window.zaraz?.track("whatsapp_click");
       console.log("TinyForest_Brochure_Whatsapp");
     } else {
       console.log("TinyForest_Brochure_Whatsapp-");
